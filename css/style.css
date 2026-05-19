@@ -4,3 +4,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* PALETA DE CORES (a definir) */
+:root {
+  --cor-primaria: #1e3a5f;
+}
+
+.logo-customizado {
+  width: 10rem;
+  border: 2px, solid, var(--cor-primaria);
+}
+
+/* .cabecalho-customizado {
+  /* background-color: var(--cor-primaria); 
+} */
+
+/* .rodape-customizado {
+
+} */
