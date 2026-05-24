@@ -34,6 +34,9 @@ A4_PS/
 ├──js/
 │   └──script.js
 ├──pages/
+│   └──acesso_rapido.html
+├──template/
+│   └──template.html
 ├──.gitignore
 ├──LICENSE
 ├──README.md
