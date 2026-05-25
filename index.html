@@ -17,7 +17,39 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <div>
+                    <!-- BOTÃO DE LOGUIN -->
+                    <button class="btn btn-success ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                </div>
+                <!-- MODAL -->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- HEADER -->
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    Área de Login
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <!-- BODY -->
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" placeholder="Digite seu email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Senha</label>
+                                        <input type="password" class="form-control" placeholder="Digite sua senha">
+                                    </div>
+                                    <button type="submit" class="btn btn-success w-100">Entrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -33,7 +65,7 @@
         <header class="bg-dark py-1 cabecalho-customizado">
             <div class="d-flex justify-content-center align-items-center text-center my-2">
                 <div>
-                    <img class="logo-customizado img-fluid rounded-circle mb-4 me-3" src="assets/logo/logo_sca.png" alt="Logomarca da SCA"/>
+                    <img class="logo-customizado img-fluid rounded-circle mb-4 me-5" src="assets/logo/logo_sca.png" alt="Logomarca da SCA"/>
                 </div>
                 <div>
                     <h1 class="text-white fs-3 fw-bolder">Sistema de Controle Acadêmico</h1>
