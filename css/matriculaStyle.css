@@ -1,0 +1,17 @@
+.titleRow {
+    color: gray;
+    opacity: 0.8;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-wrap: nowrap;
+    min-height: 20px;
+}
+
+.valueRow {
+    margin: 0;
+    line-height: 1.4;
+    min-height: 20px;
+}
