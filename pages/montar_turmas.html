@@ -16,508 +16,153 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="bg-light d-flex flex-column min-vh-100">
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
         <div class="container">
-
-            <a class="navbar-brand" href="#!">
-                USUÁRIO LOGADO
-            </a>
-
-            <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
+            <a class="navbar-brand">SCA - Montar Turmas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="../index.html">
-                            Home
-                        </a>
-                    </li>
-
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-end">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="acesso_rapido.html">Alternar Módulo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contatos">Contato</a></li>
                 </ul>
-
             </div>
-
         </div>
-
     </nav>
 
-    <!-- HEADER -->
-    <header class="bg-dark py-3 cabecalho-customizado">
-
-        <div class="d-flex justify-content-center align-items-center text-center my-2">
-
-            <div>
-
-                <img class="logo-customizado img-fluid rounded-circle mb-4 me-3"
-                    src="../assets/logo/logo_sca.png"
-                    alt="Logo">
-
+    <!-- Header - Responsivo -->
+    <header class="bg-dark py-4 ">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-center">
+                <img src="../assets/logo/logo_sca.png" alt="Logomarca da SCA" class="img-fluid rounded-circle mb-3 mb-md-0 me-md-4" style="max-width: 120px;">
+                <div>
+                    <h1 class="text-white fw-bold mb-2">Sistema de Controle Acadêmico</h1>
+                    <p class="lead text-white-50 small mb-0">Monte e Gerenciamento de Turmas</p>
+                </div>
             </div>
-
-            <div>
-
-                <h1 class="text-white fs-3 fw-bolder">
-                    Sistema de Controle Acadêmico
-                </h1>
-
-                <p class="text-white-50">
-                    Montagem e Gerenciamento de Turmas
-                </p>
-
-            </div>
-
         </div>
-
     </header>
 
     <!-- CONTEÚDO -->
-    <div class="container my-5">
+     <main class="flex-grow-1">
+         <div class="container my-5">
+            <!-- TÍTULO -->
+            <section class="mb-4">
+                <h2 class="fw-bold">Montar Turmas</h2>
+            </section>
+     
+            <!-- FORMULÁRIO -->
+            <section class="card shadow p-4 mb-5">
+                <div class="row">
+                    <!-- NOME -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Nome da Turma</label>
+                        <input type="text" class="form-control" id="nomeTurma" placeholder="Digite o nome da turma">
+                    </div>
+     
+                    <!-- CURSO -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Curso</label>
+                        <input type="text" class="form-control" id="curso" placeholder="Digite o curso">
+                    </div>
 
-        <!-- TÍTULO -->
-        <section class="mb-4">
-
-            <h2 class="fw-bold">
-                Montar Turmas
-            </h2>
-
-        </section>
-
-        <!-- FORMULÁRIO -->
-        <section class="card shadow p-4 mb-5">
-
-            <div class="row">
-
-                <!-- NOME -->
-                <div class="col-md-6 mb-3">
-
-                    <label class="form-label">
-                        Nome da Turma
-                    </label>
-
-                    <input type="text"
-                        class="form-control"
-                        id="nomeTurma"
-                        placeholder="Digite o nome da turma">
-
+                    <!-- DISCIPLINA -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Disciplina</label>
+                        <input type="text" class="form-control" id="disciplina" placeholder="Digite a disciplina">
+                    </div>
+     
+                    <!-- PROFESSOR -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Professor</label>
+                        <input type="text" class="form-control" id="professor" placeholder="Digite o professor">
+                    </div>
+     
+                    <!-- PERÍODO -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Período</label>
+                        <select class="form-select" id="periodo">
+                            <option selected disabled>Selecione</option>
+                            <option>Manhã</option>
+                            <option>Tarde</option>
+                            <option>Noite</option>
+                        </select>
+                    </div>
+     
+                    <!-- SALA -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Sala</label>
+                        <input type="text" class="form-control" id="sala" placeholder="Digite a sala">
+                    </div>
+     
+                    <!-- VAGAS -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Quantidade de Vagas</label>
+                        <input type="number" class="form-control" id="vagas" placeholder="0">
+                    </div>
+     
+                    <!-- VAGAS OCUPADAS -->
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label">Vagas Ocupadas</label>
+                        <input type="number" class="form-control" id="ocupadas" placeholder="0">
+                    </div>
                 </div>
-
-                <!-- CURSO -->
-                <div class="col-md-6 mb-3">
-
-                    <label class="form-label">
-                        Curso
-                    </label>
-
-                    <input type="text"
-                        class="form-control"
-                        id="curso"
-                        placeholder="Digite o curso">
-
+     
+                <!-- BOTÕES -->
+                <div class="d-flex gap-3">
+                   <button class="btn btn-success" onclick="salvarTurma()">Salvar</button>
+                   <button class="btn btn-danger" onclick="limparFormulario()">Cancelar</button>
                 </div>
-
-                <!-- DISCIPLINA -->
-                <div class="col-md-6 mb-3">
-
-                    <label class="form-label">
-                        Disciplina
-                    </label>
-
-                    <input type="text"
-                        class="form-control"
-                        id="disciplina"
-                        placeholder="Digite a disciplina">
-
-                </div>
-
-                <!-- PROFESSOR -->
-                <div class="col-md-6 mb-3">
-
-                    <label class="form-label">
-                        Professor
-                    </label>
-
-                    <input type="text"
-                        class="form-control"
-                        id="professor"
-                        placeholder="Digite o professor">
-
-                </div>
-
-                <!-- PERÍODO -->
-                <div class="col-md-4 mb-3">
-
-                    <label class="form-label">
-                        Período
-                    </label>
-
-                    <select class="form-select" id="periodo">
-
-                        <option selected disabled>
-                            Selecione
-                        </option>
-
-                        <option>
-                            Manhã
-                        </option>
-
-                        <option>
-                            Tarde
-                        </option>
-
-                        <option>
-                            Noite
-                        </option>
-
-                    </select>
-
-                </div>
-
-                <!-- SALA -->
-                <div class="col-md-4 mb-3">
-
-                    <label class="form-label">
-                        Sala
-                    </label>
-
-                    <input type="text"
-                        class="form-control"
-                        id="sala"
-                        placeholder="Digite a sala">
-
-                </div>
-
-                <!-- VAGAS -->
-                <div class="col-md-4 mb-3">
-
-                    <label class="form-label">
-                        Quantidade de Vagas
-                    </label>
-
-                    <input type="number"
-                        class="form-control"
-                        id="vagas"
-                        placeholder="0">
-
-                </div>
-
-                <!-- VAGAS OCUPADAS -->
-                <div class="col-md-6 mb-4">
-
-                    <label class="form-label">
-                        Vagas Ocupadas
-                    </label>
-
-                    <input type="number"
-                        class="form-control"
-                        id="ocupadas"
-                        placeholder="0">
-
-                </div>
-
-            </div>
-
-            <!-- BOTÕES -->
-            <div class="d-flex gap-3">
-
-                <button class="btn btn-success"
-                    onclick="salvarTurma()">
-
-                    Salvar
-
-                </button>
-
-                <button class="btn btn-danger"
-                    onclick="limparFormulario()">
-
-                    Cancelar
-
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- TABELA -->
-        <section>
-
-            <table class="table border table-striped table-hover align-middle">
-
-                <thead class="table-dark">
-
-                    <tr>
-
-                        <th>#</th>
-                        <th>Turma</th>
-                        <th>Curso</th>
-                        <th>Disciplina</th>
-                        <th>Professor</th>
-                        <th>Período</th>
-                        <th>Sala</th>
-                        <th>Vagas</th>
-                        <th>Ocupadas</th>
-                        <th>Disponíveis</th>
-                        <th>Status</th>
-
-                        <th class="text-end">
-                            Opções
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="tabelaTurmas">
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-    </div>
-
-    <!-- RODAPÉ -->
-    <footer class="py-5 bg-dark rodape-customizado">
-
-        <div class="container">
-
-            <p class="m-0 text-center text-white">
-                &copy; Copyright SCA 2026
-            </p>
-
+            </section>
+     
+            <!-- TABELA -->
+            <section class="table-responsive">
+                <table class="table border table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Turma</th>
+                            <th>Curso</th>
+                            <th>Disciplina</th>
+                            <th>Professor</th>
+                            <th>Período</th>
+                            <th>Sala</th>
+                            <th>Vagas</th>
+                            <th>Ocupadas</th>
+                            <th>Disponíveis</th>
+                            <th>Status</th>
+                            <th class="text-end">Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaTurmas"></tbody>
+                </table>
+            </section>
         </div>
+    </main>
 
+    <!-- Rodape -->
+    <footer class="py-5 bg-dark mt-auto">
+        <div id="contatos">
+            <div class="container my-1">
+                <p class="m-0 text-center text-white">&copy; Copyright SCA 2026</p>
+            </div>
+            <div class="container text-center text-white my-1">
+                <i class="bi bi-telephone me-1"></i>
+                (99) 99999-9999
+            </div>
+            <div class="container text-center text-white my-1">
+                <i class="bi bi-envelope-at-fill me-2"></i>support@email.com
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JAVASCRIPT -->
-    <script>
-
-        let contador = 1;
-
-        let linhaEditando = null;
-
-        function salvarTurma() {
-
-            const nomeTurma = document.getElementById("nomeTurma").value;
-            const curso = document.getElementById("curso").value;
-            const disciplina = document.getElementById("disciplina").value;
-            const professor = document.getElementById("professor").value;
-            const periodo = document.getElementById("periodo").value;
-            const sala = document.getElementById("sala").value;
-            const vagas = parseInt(document.getElementById("vagas").value);
-            const ocupadas = parseInt(document.getElementById("ocupadas").value);
-
-            if (
-                nomeTurma === "" ||
-                curso === "" ||
-                disciplina === "" ||
-                professor === "" ||
-                periodo === "Selecione" ||
-                sala === "" ||
-                isNaN(vagas) ||
-                isNaN(ocupadas)
-            ) {
-
-                alert("Preencha todos os campos.");
-                return;
-            }
-
-            if (ocupadas > vagas) {
-
-                alert("As vagas ocupadas não podem ser maiores que o total de vagas.");
-                return;
-            }
-
-            const disponiveis = vagas - ocupadas;
-
-            let status = "";
-
-            if (disponiveis > 0) {
-
-                status = `
-                    <span class="badge bg-success">
-                        ATIVA
-                    </span>
-                `;
-            }
-
-            else {
-
-                status = `
-                    <span class="badge bg-danger">
-                        LOTADA
-                    </span>
-                `;
-            }
-
-            const tabela = document.getElementById("tabelaTurmas");
-
-            if (linhaEditando !== null) {
-
-                const numeroLinha = linhaEditando.cells[0].innerText;
-
-                linhaEditando.innerHTML = `
-
-                    <td>${numeroLinha}</td>
-
-                    <td>${nomeTurma}</td>
-
-                    <td>${curso}</td>
-
-                    <td>${disciplina}</td>
-
-                    <td>${professor}</td>
-
-                    <td>${periodo}</td>
-
-                    <td>${sala}</td>
-
-                    <td>${vagas}</td>
-
-                    <td>${ocupadas}</td>
-
-                    <td>${disponiveis}</td>
-
-                    <td>${status}</td>
-
-                    <td>
-
-                        <div class="d-flex justify-content-end gap-2">
-
-                            <button class="btn btn-sm btn-outline-primary"
-                                onclick="editarTurma(this)">
-
-                                <i class="bi bi-pencil"></i>
-
-                            </button>
-
-                            <button class="btn btn-sm btn-outline-danger"
-                                onclick="excluirTurma(this)">
-
-                                <i class="bi bi-trash"></i>
-
-                            </button>
-
-                        </div>
-
-                    </td>
-
-                `;
-
-                linhaEditando = null;
-            }
-
-            else {
-
-                tabela.innerHTML += `
-
-                    <tr>
-
-                        <td>${contador}</td>
-
-                        <td>${nomeTurma}</td>
-
-                        <td>${curso}</td>
-
-                        <td>${disciplina}</td>
-
-                        <td>${professor}</td>
-
-                        <td>${periodo}</td>
-
-                        <td>${sala}</td>
-
-                        <td>${vagas}</td>
-
-                        <td>${ocupadas}</td>
-
-                        <td>${disponiveis}</td>
-
-                        <td>${status}</td>
-
-                        <td>
-
-                            <div class="d-flex justify-content-end gap-2">
-
-                                <button class="btn btn-sm btn-outline-primary"
-                                    onclick="editarTurma(this)">
-
-                                    <i class="bi bi-pencil"></i>
-
-                                </button>
-
-                                <button class="btn btn-sm btn-outline-danger"
-                                    onclick="excluirTurma(this)">
-
-                                    <i class="bi bi-trash"></i>
-
-                                </button>
-
-                            </div>
-
-                        </td>
-
-                    </tr>
-
-                `;
-
-                contador++;
-            }
-
-            limparFormulario();
-        }
-
-        function editarTurma(botao) {
-
-            linhaEditando = botao.closest("tr");
-
-            const colunas = linhaEditando.querySelectorAll("td");
-
-            document.getElementById("nomeTurma").value = colunas[1].innerText;
-            document.getElementById("curso").value = colunas[2].innerText;
-            document.getElementById("disciplina").value = colunas[3].innerText;
-            document.getElementById("professor").value = colunas[4].innerText;
-            document.getElementById("periodo").value = colunas[5].innerText;
-            document.getElementById("sala").value = colunas[6].innerText;
-            document.getElementById("vagas").value = colunas[7].innerText;
-            document.getElementById("ocupadas").value = colunas[8].innerText;
-        }
-
-        function excluirTurma(botao) {
-
-            botao.closest("tr").remove();
-        }
-
-        function limparFormulario() {
-
-            document.getElementById("nomeTurma").value = "";
-            document.getElementById("curso").value = "";
-            document.getElementById("disciplina").value = "";
-            document.getElementById("professor").value = "";
-            document.getElementById("periodo").selectedIndex = 0;
-            document.getElementById("sala").value = "";
-            document.getElementById("vagas").value = "";
-            document.getElementById("ocupadas").value = "";
-        }
-
-    </script>
-
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
