@@ -16,3 +16,26 @@
   width: 10rem;
   border: 2px, solid, var(--cor-primaria);
 }
+
+
+
+
+.card-header.bg-primary {
+    background-color: var(--cor-primaria) !important;
+}
+
+
+.btn-success {
+    background-color: var(--cor-secundaria) !important;
+    border-color: var(--cor-secundaria) !important;
+}
+
+.btn-success:hover {
+    background-color: var(--cor-primaria) !important;
+    border-color: var(--cor-primaria) !important;
+}
+
+
+.text-primary {
+    color: var(--cor-secundaria) !important;
+}
