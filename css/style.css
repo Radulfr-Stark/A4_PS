@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* PALETA DE CORES (a definir) */
+/* PALETA DE CORES*/
 :root {
   --cor-primaria: #061f4e;
   --cor-secundaria: #0045ab;
@@ -17,13 +17,9 @@
   border: 2px, solid, var(--cor-primaria);
 }
 
-
-
-
 .card-header.bg-primary {
     background-color: var(--cor-primaria) !important;
 }
-
 
 .btn-success {
     background-color: var(--cor-secundaria) !important;
