@@ -29,14 +29,37 @@ Site desenvolvido como parte da Atividade 4 do curso. O projeto usa:
 ```bash
 A4_PS/
 ├──assets/
+├──campus/
+│   └──campus_principal.png
+├──card_img/
+│   │──gerenciar_aluno.png
+│   │──gerenciar_despesas.png
+│   │──gerenciar_disciplinas.png
+│   │──gerenciar_horarios.png
+│   │──matricular_aluno.png
+│   └──montar_turmas.png
+├──logo/
+│   └──logo_sca.png
 ├──css/
+│   │──disciplinaStyle.css
+│   │──horariosStyle.css
+│   │──matriculaStyle.css
 │   └──style.css
 ├──js/
+│   │──disciplinaScript.js
+│   │──horariosScript.js
+│   │──matriculaScript.js
+│   │──validacaoDespesas.js
+│   │──validacaoAluno.js
 │   └──script.js
 ├──pages/
-│   └──acesso_rapido.html
-├──template/
-│   └──template.html
+│   │──acesso_rapido.html
+│   │──gerenciar_disciplinas.html
+│   │──gerenciarAluno.html
+│   │──gerenciarDespesas.html
+│   │──horarios.html
+│   │──matricula.html
+│   └──montar_turmas.html
 ├──.gitignore
 ├──LICENSE
 ├──README.md
