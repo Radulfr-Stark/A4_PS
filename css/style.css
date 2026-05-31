@@ -5,37 +5,18 @@
   box-sizing: border-box;
 }
 
-/* PALETA DE CORES (a definir) */
+/* PALETA DE CORES*/
 :root {
   --cor-primaria: #061f4e;
   --cor-secundaria: #0045ab;
   --cor-terciaria: #399ffe;
 }
 
-.logo-customizado {
-  width: 10rem;
-  border: 2px, solid, var(--cor-primaria);
-}
-
-
-
-
-.card-header.bg-primary {
-    background-color: var(--cor-primaria) !important;
-}
-
-
 .btn-success {
-    background-color: var(--cor-secundaria) !important;
-    border-color: var(--cor-secundaria) !important;
+    background-color: var(--cor-secundaria);
+    border: var(--cor-secundaria);
 }
 
-.btn-success:hover {
-    background-color: var(--cor-primaria) !important;
-    border-color: var(--cor-primaria) !important;
-}
-
-
-.text-primary {
-    color: var(--cor-secundaria) !important;
+.btn:hover {
+    scale: 1.05;
 }

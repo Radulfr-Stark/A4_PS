@@ -1,142 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCA - Tipos de Despesas</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-
-<body class="bg-light">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container px-5">
-            <a class="navbar-brand" href="../index.html">SCA - Sistema de Controle Acadêmico</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gerenciarAluno.html">Alunos</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Despesas</a></li>
-                </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SCA - Gerenciar Despesas</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="bg-light d-flex flex-column min-vh-100">
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand">SCA - Módulo de Despesas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-end">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="acesso_rapido.html">Seleção de Módulo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contatos">Contato</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <header class="py-5 mb-5" style="background-color: #061f4e;">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-6">
-                    <div class="text-center my-2">
-                        <img src="../assets/logo/logo_sca.png" alt="SCA Logo" class="rounded-circle mb-3 bg-white p-2" style="width: 100px; height: 100px; object-fit: contain;">
-                        <h1 class="display-6 fw-bolder text-white mb-1">Módulo de Despesas</h1>
+        <!-- Header - Responsivo -->
+        <header class="bg-dark py-4 ">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-center">
+                    <img src="../assets/logo/logo_sca.png" alt="Logomarca da SCA" class="img-fluid rounded-circle mb-3 mb-md-0 me-md-4" style="max-width: 120px;">
+                    <div>
+                        <h1 class="text-white fw-bold mb-2">Sistema de Controle Acadêmico</h1>
                         <p class="lead text-white-50 small mb-0">Consulte, classifique ou adicione novos tipos de despesas</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="container my-5 flex-grow-1">
-        <div class="row justify-content-center">
-            
-            <div class="card shadow-sm border-0 p-4 bg-white">
-                <section class="mb-4">
-                    <h3 class="fw-bold text-dark mb-3">GERENCIAR TIPOS DE DESPESAS</h3>
-
-                    <div class="d-flex gap-2">
-                        <button class="btn btn-dark px-4" type="button" id="btnConsultar">Consultar</button>
-                        <button class="btn btn-outline-primary px-4 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#modalCadastroDespesa" style="color: #0045ab; border-color: #0045ab;">+ Nova Despesa</button>
+        <main class="flex-grow-1">
+            <div class="container my-5 flex-grow-1">
+                <div class="row justify-content-center">
+                    <div class="card shadow-sm border-0 p-4 bg-white">
+                        <section class="mb-4">
+                            <h3 class="fw-bold text-dark mb-3">GERENCIAR TIPOS DE DESPESAS</h3>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-dark px-4" type="button" id="btnConsultar">Consultar</button>
+                                <button class="btn btn-outline-secondary px-4 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#modalCadastroDespesa">+ Nova Despesa</button>
+                            </div>
+                        </section>
+                        <section class="my-2">
+                            <table class="table border table-striped table-hover align-middle mb-0" id="tabelaDespesas">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col" style="width: 5%;">#</th>
+                                        <th scope="col" style="width: 15%;">Código</th>
+                                        <th scope="col" style="width: 20%;">Categoria</th>
+                                        <th scope="col">Descrição Breve</th>
+                                        <th scope="col" style="width: 10%;">Status</th>
+                                        <th scope="col" class="text-end" style="width: 15%;">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>DESP-101</td>
+                                        <td>Infraestrutura</td>
+                                        <td>Manutenção preventiva do bloco de engenharia</td>
+                                        <td><span class="badge bg-success">ATIVO</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end gap-2">
+                                                <button class="btn btn-sm btn-outline-info" title="Informações"><i class="bi bi-info-circle"></i></button>
+                                                <button class="btn btn-sm btn-outline-primary" title="Editar"><i class="bi bi-pencil"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger" title="Apagar"><i class="bi bi-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
                     </div>
-                </section>
-
-                <section class="my-2">
-                    <table class="table border table-striped table-hover align-middle mb-0" id="tabelaDespesas">
-                        <thead class="table-light">
-                            <tr>
-                                <th scope="col" style="width: 5%;">#</th>
-                                <th scope="col" style="width: 15%;">Código</th>
-                                <th scope="col" style="width: 20%;">Categoria</th>
-                                <th scope="col">Descrição Breve</th>
-                                <th scope="col" style="width: 10%;">Status</th>
-                                <th scope="col" class="text-end" style="width: 15%;">Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>DESP-101</td>
-                                <td>Infraestrutura</td>
-                                <td>Manutenção preventiva do bloco de engenharia</td>
-                                <td><span class="badge bg-success">ATIVO</span></td>
-                                <td>
-                                    <div class="d-flex justify-content-end gap-2">
-                                        <button class="btn btn-sm btn-outline-info" title="Informações"><i class="bi bi-info-circle"></i></button>
-                                        <button class="btn btn-sm btn-outline-primary" title="Editar"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn btn-sm btn-outline-danger" title="Apagar"><i class="bi bi-trash"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="modal fade" id="modalCadastroDespesa" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalDespesaLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content border-0 shadow">
-                <div class="modal-header text-white" style="background-color: #061f4e;">
-                    <h5 class="modal-title fw-bold" id="modalDespesaLabel">Cadastrar Tipo de Despesa</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    
-                    <div id="alertaErro" class="alert alert-danger d-none" role="alert"></div>
-                    <div id="alertaSucesso" class="alert alert-success d-none" role="alert">
-                        Tipo de despesa cadastrado com sucesso!
-                    </div>
-
-                    <form id="formDespesa" class="row g-3" novalidate>
-                        <div class="col-12">
-                            <label for="codigo" class="form-label fw-bold">Código identificador *</label>
-                            <input type="text" class="form-control" id="codigo" placeholder="Ex: DESP-200" required>
-                        </div>
-                        <div class="col-12">
-                            <label for="categoria" class="form-label fw-bold">Categoria da Despesa *</label>
-                            <select class="form-select" id="categoria" required>
-                                <option value="">Selecione uma categoria...</option>
-                                <option value="Infraestrutura">Infraestrutura</option>
-                                <option value="Pessoal">Pessoal / RH</option>
-                                <option value="Acadêmico">Material Acadêmico</option>
-                                <option value="Administrativo">Administrativo</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <label for="descricao" class="form-label fw-bold">Descrição Breve *</label>
-                            <textarea class="form-control" id="descricao" rows="3" placeholder="Explique resumidamente a finalidade desta despesa" required></textarea>
-                        </div>
-
-                        <div class="modal-footer px-0 pb-0 mt-4">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn text-white fw-bold" style="background-color: #0045ab;">Salvar Despesa</button>
-                        </div>
-                    </form>
                 </div>
             </div>
-        </div>
-    </div>
     
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JavaScript de Despesas -->
-    <script src="../js/validacaoDespesas.js"></script>
-</body>
+            <div class="modal fade" id="modalCadastroDespesa" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalDespesaLabel" aria-hidden="true">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content border-0 shadow">
+                        <div class="modal-header text-white" style="background-color: #061f4e;">
+                            <h5 class="modal-title fw-bold" id="modalDespesaLabel">Cadastrar Tipo de Despesa</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <div id="alertaErro" class="alert alert-danger d-none" role="alert"></div>
+                            <div id="alertaSucesso" class="alert alert-success d-none" role="alert">
+                                Tipo de despesa cadastrado com sucesso!
+                            </div>
+    
+                            <form id="formDespesa" class="row g-3" novalidate>
+                                <div class="col-12">
+                                    <label for="codigo" class="form-label fw-bold">Código identificador *</label>
+                                    <input type="text" class="form-control" id="codigo" placeholder="Ex: DESP-200" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="categoria" class="form-label fw-bold">Categoria da Despesa *</label>
+                                    <select class="form-select" id="categoria" required>
+                                        <option value="">Selecione uma categoria...</option>
+                                        <option value="Infraestrutura">Infraestrutura</option>
+                                        <option value="Pessoal">Pessoal / RH</option>
+                                        <option value="Acadêmico">Material Acadêmico</option>
+                                        <option value="Administrativo">Administrativo</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="descricao" class="form-label fw-bold">Descrição Breve *</label>
+                                    <textarea class="form-control" id="descricao" rows="3" placeholder="Explique resumidamente a finalidade desta despesa" required></textarea>
+                                </div>
+    
+                                <div class="modal-footer px-0 pb-0 mt-4">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn text-white fw-bold" style="background-color: #0045ab;">Salvar Despesa</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Rodape -->
+        <footer class="py-5 bg-dark mt-auto">
+            <div id="contatos">
+                <div class="container my-1">
+                    <p class="m-0 text-center text-white">&copy; Copyright SCA 2026</p>
+                </div>
+                <div class="container text-center text-white my-1">
+                    <i class="bi bi-telephone me-1"></i>
+                    (99) 99999-9999
+                </div>
+                <div class="container text-center text-white my-1">
+                    <i class="bi bi-envelope-at-fill me-2"></i>support@email.com
+                </div>
+            </div>
+        </footer>
 
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- JavaScript de Despesas -->
+        <script src="../js/validacaoDespesas.js"></script>
+    </body>
 </html>
