@@ -20,27 +20,27 @@
                 <a class="navbar-brand" href="#!">USUÁRIO LOGADO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-end">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acesso_rapido.html">Iniciar Sistema</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contatos">Contato</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Header - set the background image for the header in the line below-->
-        <header class="bg-dark py-1 cabecalho-customizado">
-            <div class="d-flex justify-content-center align-items-center text-center my-2">
+        <!-- Header - Responsivo -->
+    <header class="bg-dark py-4 ">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-center text-center">
+                <img src="../assets/logo/logo_sca.png" alt="Logomarca da SCA" class="img-fluid rounded-circle mb-3 mb-md-0 me-md-4" style="max-width: 120px;">
                 <div>
-                    <img class="logo-customizado img-fluid rounded-circle mb-4 me-3" src="../assets/logo/logo_sca.png" alt="Logomarca da SCA"/>
-                </div>
-                <div>
-                    <h1 class="text-white fs-3 fw-bolder">Sistema de Controle Acadêmico</h1>
-                    <p class="text-white-50">Seja Bem Vindo!</p>
+                    <h1 class="text-white fw-bold mb-2">Sistema de Controle Acadêmico</h1>
+                    <p class="text-white-50 mb-0">Seja Bem Vindo!</p>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
         <main>
             <div class="row justify-content-center">
@@ -86,12 +86,21 @@
 
         <!-- Rodape -->
         <footer class="py-5 bg-dark rodape-customizado">
-            <div class="container"><p class="m-0 text-center text-white">&copy; Copyright SCA 2026</p></div>
+            <div id="contatos">
+                <div class="container my-1">
+                    <p class="m-0 text-center text-white">&copy; Copyright SCA 2026</p>
+                </div>
+                <div class="container text-center text-white my-1">
+                    <i class="bi bi-telephone me-1"></i>
+                    (99) 99999-9999
+                </div>
+                <div class="container text-center text-white my-1">
+                    <i class="bi bi-envelope-at-fill me-2"></i>support@email.com
+                </div>
+            </div>
         </footer>
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- JavaScript Customizado -->
-        <script src="../js/script.js"></script>
     </body>
 </html>
