@@ -1,0 +1,41 @@
+body{
+    background-color: #f4f6f9;
+}
+
+.card{
+    border-radius: 12px;
+}
+
+.card-header{
+    font-weight: bold;
+}
+
+#mensagem{
+    font-weight: bold;
+}
+.cabecalho-horario{
+    background-color: #0045ab !important;
+}
+.btn-azul{
+    background-color: #0045ab;
+    color: white;
+    border: none;
+}
+
+.navbar-azul{
+    background-color: #0045ab;
+}
+
+.navbar-azul .navbar-brand{
+    color: white;
+}
+.btn-azul{
+    background-color: #0045ab;
+    color: white;
+    border: none;
+}
+
+.btn-azul:hover{
+    background-color: #00388c;
+    color: white;
+}
